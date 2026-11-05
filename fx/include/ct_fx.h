@@ -13,8 +13,13 @@
 #define CTFX_FS          8000   /* 出力のサンプリング周波数 */
 #define CTFX_FRAME       32     /* 1 フレームのサンプル数（4ms） */
 #define CTFX_FRAME_MS    4
-#define CTFX_MAX_MORA    256
-#define CTFX_MAX_PHRASE  64
+/* 1 回に渡せる記号列の長さ（作業領域の大きさが変わる。V1 は既定値、V2 は小さくする） */
+#ifndef CTFX_MAX_MORA
+#  define CTFX_MAX_MORA    256
+#endif
+#ifndef CTFX_MAX_PHRASE
+#  define CTFX_MAX_PHRASE  64
+#endif
 #define CTFX_SEGQ        32
 #define CTFX_CMDQ        16
 #define CTFX_PULSE_N     64
